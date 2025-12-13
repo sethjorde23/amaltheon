@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Amaltheon{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="logo">Amaltheon</a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <button class="dropdown-trigger">Solutions</button>
+                    <div class="dropdown-menu">
+                        <a href="{% url 'growers' %}">Growers</a>
+                        <a href="{% url 'food_processors' %}">Food Processors</a>
+                        <a href="{% url 'cpg_producers' %}">CPG Producers</a>
+                        <a href="{% url 'restaurants' %}">Restaurants</a>
+                        <a href="{% url 'government' %}">Government</a>
+                        <a href="{% url 'investors' %}">Investors</a>
+                        <a href="{% url 'ag_supply' %}">Ag Supply</a>
+                    </div>
+                </div>
+                <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                <a href="{% url 'contact' %}" class="btn-primary">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="logo">Amaltheon</span>
+                <p>The intelligence platform for food systems. Real-time visibility into supply and demand across local and regional markets.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <a href="{% url 'growers' %}">Growers</a>
+                    <a href="{% url 'food_processors' %}">Food Processors</a>
+                    <a href="{% url 'cpg_producers' %}">CPG Producers</a>
+                    <a href="{% url 'restaurants' %}">Restaurants</a>
+                </div>
+                <div class="footer-column">
+                    <h4>More</h4>
+                    <a href="{% url 'government' %}">Government</a>
+                    <a href="{% url 'investors' %}">Investors</a>
+                    <a href="{% url 'ag_supply' %}">Ag Supply</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Amaltheon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
