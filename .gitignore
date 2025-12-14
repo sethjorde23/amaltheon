@@ -13,8 +13,6 @@ venv/
 .idea/
 *.swp
 
-# Static files (collected)
-staticfiles/
 
 # OS
 .DS_Store
