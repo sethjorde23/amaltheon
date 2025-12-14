@@ -5,63 +5,67 @@
 {% block content %}
 <section class="hero">
     <div class="hero-content">
-        <p class="hero-tagline">The Operating System for the Food Industry</p>
-        <h1>Make better decisions</h1>
+        <p class="hero-tagline">The Intelligence Platform for Food Systems</p>
+        <h1>Enabling better decisions across the <span class="highlight">food industry</span></h1>
         <p class="hero-description">
-            Real-time supply and demand intelligence for every participant in local and regional food systems. From farm to shelf, see the market clearly and act decisively.
+        We connect data across the food system, build custom software and AI tools, and give you the insights to decide and act.
         </p>
         <div class="hero-buttons">
             <a href="{% url 'contact' %}" class="btn-primary">Request Demo</a>
             <a href="#solutions" class="btn-secondary">Explore Solutions</a>
         </div>
     </div>
+    <div class="scroll-indicator">
+        <div class="mouse"></div>
+        <span>Scroll</span>
+    </div>
 </section>
 
 <section id="solutions" class="section section-dark">
     <div class="container">
-        <div class="section-header">
-            <h2>Intelligence for every player</h2>
+        <div class="section-header fade-in">
+            <h2>Building a more efficient food system</h2>
             <p>Purpose-built analytics and decision support for each role in the food system</p>
         </div>
-        
+
         <div class="customer-grid">
-            <a href="{% url 'growers' %}" class="customer-card">
+            <a href="{% url 'growers' %}" class="customer-card fade-in">
                 <h3>Growers</h3>
                 <p>Know what to plant, when to sell, and who to sell to. Demand forecasting, price optimization, and buyer matching powered by real market data.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'food_processors' %}" class="customer-card">
+
+            <a href="{% url 'food_processors' %}" class="customer-card fade-in">
                 <h3>Food Processors</h3>
                 <p>Match capacity to real demand. Sourcing intelligence, production scheduling, and downstream visibility to optimize every run.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'cpg_producers' %}" class="customer-card">
+
+            <a href="{% url 'cpg_producers' %}" class="customer-card fade-in">
                 <h3>CPG Producers</h3>
                 <p>Secure supply before your competitors. Ingredient monitoring, supplier diversification, and cost structure intelligence.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'restaurants' %}" class="customer-card">
+
+            <a href="{% url 'restaurants' %}" class="customer-card fade-in">
                 <h3>Restaurants</h3>
                 <p>Build menus around what's actually available. Seasonal planning, supplier discovery, and procurement optimization.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'government' %}" class="customer-card">
+
+            <a href="{% url 'government' %}" class="customer-card fade-in">
                 <h3>Government & Institutions</h3>
                 <p>See the food system clearly. Policy modeling, food access mapping, and infrastructure investment optimization.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'investors' %}" class="customer-card">
+
+            <a href="{% url 'investors' %}" class="customer-card fade-in">
                 <h3>Investors</h3>
-                <p>See the deals others miss. Due diligence, market sizing, and competitive intelligence powered by real transaction data.</p>
+                <p>Trust, but verify. Independent due diligence on supply chains, customer concentration, and market position powered by real data.</p>
                 <span class="learn-more">Learn more</span>
             </a>
-            
-            <a href="{% url 'ag_supply' %}" class="customer-card">
+
+            <a href="{% url 'ag_supply' %}" class="customer-card fade-in">
                 <h3>Ag Supply</h3>
                 <p>Get ahead of demand. Grower-level forecasting, competitive positioning, and inventory optimization for input suppliers.</p>
                 <span class="learn-more">Learn more</span>
@@ -72,23 +76,23 @@
 
 <section class="section">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header fade-in">
             <h2>The problem we solve</h2>
             <p>Local and regional food systems are opaque, fragmented, and reactive</p>
         </div>
-        
+
         <div class="customer-grid">
-            <div class="customer-card">
+            <div class="customer-card fade-in">
                 <h3>Growers plant blind</h3>
                 <p>Decisions based on last year's prices and gut instinct. No visibility into what buyers actually need until it's too late.</p>
             </div>
-            
-            <div class="customer-card">
+
+            <div class="customer-card fade-in">
                 <h3>Processors guess at capacity</h3>
                 <p>Over-commit or under-utilize. No real-time signal on upstream supply or downstream demand to plan production.</p>
             </div>
-            
-            <div class="customer-card">
+
+            <div class="customer-card fade-in">
                 <h3>Buyers scramble for supply</h3>
                 <p>Restaurants and CPG producers discover shortages after they've hit. No early warning, no alternative sourcing intelligence.</p>
             </div>
@@ -98,9 +102,9 @@
 
 <section class="cta-section">
     <div class="container">
-        <h2>Ready to see your market clearly?</h2>
-        <p>Join the growing network of food system participants making smarter decisions.</p>
-        <a href="{% url 'contact' %}" class="btn-primary">Request Demo</a>
+        <h2 class="fade-in">Ready to see your market clearly?</h2>
+        <p class="fade-in">Join the growing network of food system participants making smarter decisions.</p>
+        <a href="{% url 'contact' %}" class="btn-primary fade-in">Request Demo</a>
     </div>
 </section>
 {% endblock %}

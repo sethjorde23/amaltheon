@@ -1,0 +1,20 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Message Sent | Amaltheon{% endblock %}
+
+{% block content %}
+<section class="page-header success-page">
+    <div class="success-icon fade-in">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+    </div>
+    <h1 class="fade-in">Message sent!</h1>
+    <p class="lead fade-in">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+    <div class="hero-buttons fade-in">
+        <a href="{% url 'home' %}" class="btn-primary">Back to Home</a>
+        <a href="{% url 'demo' %}" class="btn-secondary">Request a Demo</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Contact | Amaltheon{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="hero-badge fade-in">
+        <span class="badge-dot"></span>
+        Get in Touch
+    </div>
+    <h1 class="fade-in">Let's talk</h1>
+    <p class="lead fade-in">Have a question about Amaltheon? Want to explore how we can help your business? We'd love to hear from you.</p>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-layout">
+            <div class="contact-info fade-in">
+                <h2>Connect with us</h2>
+                <p>Whether you're a grower looking for market intelligence, a processor optimizing capacity, or an investor seeking deal flow—we're here to help.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:hello@amaltheon.com">sjorde@amaltheon.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Locations</h4>
+                            <p>Traverse City, MI</p>
+                            <p>Grand Rapids, MI</p>
+                            <p>Chicago, IL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-time">
+                    <span class="status-dot"></span>
+                    We typically respond within 24 hours
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper fade-in">
+                <form class="contact-form" action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company <span class="optional">(optional)</span></label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us what you're looking for..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <h2 class="fade-in">Looking for a demo instead?</h2>
+        <p class="fade-in">See Amaltheon in action with a personalized walkthrough of the platform.</p>
+        <a href="{% url 'demo' %}" class="btn-primary fade-in">Request Demo</a>
+    </div>
+</section>
+{% endblock %}

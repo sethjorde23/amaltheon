@@ -129,25 +129,31 @@ function initMobileMenu() {
         });
     }
 
-    // Handle mobile dropdown click
-    if (dropdownTrigger && window.innerWidth <= 768) {
+    // Handle mobile dropdown click - check width on every click
+    if (dropdownTrigger) {
         dropdownTrigger.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default link behavior if it's a link
-            dropdown.classList.toggle('active');
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+            }
         });
     }
 
     // Close menu when clicking a link
-    const links = document.querySelectorAll('.nav-link, .dropdown-menu a, .btn-primary');
+    const links = document.querySelectorAll('.nav-link, .dropdown-menu a, .nav-links .btn-primary');
     links.forEach(link => {
         link.addEventListener('click', () => {
-            btn.classList.remove('active');
-            nav.classList.remove('active');
-            body.classList.remove('no-scroll');
+            if (btn) {
+                btn.classList.remove('active');
+                nav.classList.remove('active');
+                body.classList.remove('no-scroll');
+            }
+            if (dropdown) {
+                dropdown.classList.remove('active');
+            }
         });
     });
 }
-
 // Scroll animations
 class ScrollAnimations {
     constructor() {

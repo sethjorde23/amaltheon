@@ -1,0 +1,62 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}About Us | Amaltheon{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Our Story
+    </div>
+    <h1>The Food System Has a <span class="highlight">Data Problem</span></h1>
+    <p class="lead">We're building the intelligence layer the food ecosystem has been missing.</p>
+</header>
+
+<section class="content-section">
+    <div class="content-container">
+        <h2>The Problem We See</h2>
+        <p>The food system is one of the largest economic engines on the planet. Yet across the value chain—from field to fork—critical decisions are made with incomplete information.</p>
+        <p>Growers plan production without demand signals. Processors source ingredients without visibility into supply. CPG brands launch products without understanding regional dynamics. Restaurants build menus without pricing intelligence. Investors evaluate opportunities without reliable market data.</p>
+        <p>Here's the thing: the data to answer all of these questions already exists. It's just scattered across thousands of sources, trapped in incompatible formats, and impossible to access without significant resources.</p>
+        <p>We collect it. We analyze it. We deliver it to you.</p>
+    </div>
+</section>
+
+<section class="content-section section-dark">
+    <div class="content-container">
+        <h2>What We Believe</h2>
+        <p>We believe the food system can be radically more efficient—without consolidation, without sacrificing diversity, without concentrating power in fewer hands.</p>
+        <p>But efficiency requires intelligence. You can't optimize what you can't measure. You can't plan what you can't predict. You can't compete when everyone else has a map and you're navigating blind.</p>
+        <p>Data shouldn't be a competitive advantage reserved for the largest players. It should be infrastructure—available to every grower, processor, brand, and buyer operating in food.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-container">
+        <h2>Our Approach</h2>
+        <p>Amaltheon aggregates data from across the food ecosystem—production capacity, demand signals, pricing trends, logistics patterns, market dynamics, regulatory landscapes—and structures it into intelligence you can actually use.</p>
+        <p>Whether you're deciding what to grow next season, where to source ingredients, how to price products, which markets to enter, or where to deploy capital—we give you the visibility to move with confidence.</p>
+        <p>The answers exist. We just make them accessible.</p>
+    </div>
+</section>
+
+<section class="content-section section-dark">
+    <div class="content-container">
+        <h2>Why Now</h2>
+        <p>Anyone who's implemented an ERP knows the pain: bloated systems built for everyone, customized for no one. For decades, that was the trade-off. Custom software was too expensive, too slow, too risky.</p>
+        <p>That's no longer true.</p>
+        <p>Advances in AI have fundamentally changed what's possible. We can now build tailored solutions fast—software that fits how you actually operate, not how a vendor thinks you should. Intelligence platforms that adapt to your business instead of forcing your business to adapt to them.</p>
+        <p>The economics of custom finally make sense. And we're using that moment to build what the food system has always needed.</p>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to See What's Possible?</h2>
+    <p>Join the growers, processors, brands, and investors building smarter food systems.</p>
+    <div class="hero-buttons">
+        <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
+        <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>
+    </div>
+</section>
+{% endblock %}
