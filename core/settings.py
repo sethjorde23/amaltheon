@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,6 +29,17 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+
+# This effectively says: "If there is a DATABASE_URL environment variable
+# (like on Railway), use it. If not (like on localhost), use SQLite."
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
+}
 
 # Application definition
 
@@ -121,3 +133,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# Add this section:
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.amaltheon.com',
+    'https://amaltheon.com',
+]
