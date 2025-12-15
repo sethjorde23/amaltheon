@@ -33,13 +33,7 @@ ALLOWED_HOSTS = ['*']
 # This effectively says: "If there is a DATABASE_URL environment variable
 # (like on Railway), use it. If not (like on localhost), use SQLite."
 
-DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+
 
 # Application definition
 
@@ -87,11 +81,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# KEEP THIS ONE (It handles both Local and Railway automatically)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
