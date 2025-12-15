@@ -10,6 +10,8 @@ urlpatterns = [
     path('demo/', views.demo, name='demo'),
     path('demo/success/', views.demo_success, name='demo_success'),
     path('about/', views.about, name='about'),
+    path('login/', views.site_login, name='site_login'),
+    path('logout/', views.site_logout, name='site_logout'),
 
     # Customer segments
     path('growers/', views.growers, name='growers'),

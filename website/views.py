@@ -2,11 +2,32 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm, DemoRequestForm
 
+SITE_PASSWORD = "data"  # Change this!
+
 def home(request):
+    if not request.session.get('site_authenticated'):
+        return redirect('site_login')
     return render(request, 'website/home.html')
 
 def about(request):
     return render(request, 'website/about.html')
+
+
+def site_login(request):
+    if request.method == 'POST':
+        password = request.POST.get('password', '')
+        if password == SITE_PASSWORD:
+            request.session['site_authenticated'] = True
+            return redirect('home')
+        else:
+            messages.error(request, 'Incorrect password')
+
+    return render(request, 'website/site_login.html')
+
+
+def site_logout(request):
+    request.session['site_authenticated'] = False
+    return redirect('site_login')
 
 def contact(request):
     if request.method == 'POST':
