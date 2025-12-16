@@ -1,0 +1,55 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ capability.name }} | Amaltheon{% endblock %}
+
+{% block content %}
+<header class="page-header">
+    <div class="hero-badge">
+        <span class="badge-dot"></span>
+        {{ capability.badge }}
+    </div>
+    <h1>{{ capability.headline }}</h1>
+    <p class="lead">{{ capability.description }}</p>
+</header>
+
+<section class="content-section">
+    <div class="content-container">
+        <h2>Why Amaltheon</h2>
+        <ul>
+            {% for item in capability.why_us %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<section class="content-section section-dark">
+    <div class="content-container">
+        <h2>Who It's For</h2>
+        <div class="audience-tags">
+{% for audience in capability.who_its_for %}<span class="audience-tag">{{ audience }}</span>
+{% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-container">
+        <h2>Questions We Can Answer</h2>
+        <div class="questions-grid">
+            {% for question in capability.questions %}
+            <div class="question-card">{{ question }}</div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to Get Started?</h2>
+    <p>Let's talk about how {{ capability.name }} can work for your business.</p>
+    <div class="hero-buttons">
+        <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
+        <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>
+    </div>
+</section>
+{% endblock %}
