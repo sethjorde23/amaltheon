@@ -29,4 +29,9 @@ urlpatterns = [
     path('capabilities/crop-planning/', views.crop_planning, name='crop_planning'),
     path('capabilities/seasonal-planning/', views.seasonal_planning, name='seasonal_planning'),
     path('capabilities/profitability-analysis/', views.profitability_analysis, name='profitability_analysis'),
+
+#Case study
+    path('case-studies/locavana/', views.locavana, name='locavana'),
+
+
 ]

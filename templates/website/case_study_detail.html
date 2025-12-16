@@ -1,0 +1,116 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ case_study.name }} Case Study | Amaltheon{% endblock %}
+
+{% block content %}
+<section class="page-header customer-page-header">
+    <div class="hero-badge fade-in">
+        <span class="badge-dot"></span>
+        Case Study
+    </div>
+    <h1 class="fade-in">{{ case_study.name }}</h1>
+    <p class="lead fade-in">{{ case_study.subtitle }}</p>
+    <div class="audience-tags fade-in" style="justify-content: center; margin-top: 2rem;">
+        <span class="audience-tag">{{ case_study.industry }}</span>
+        <span class="audience-tag">{{ case_study.location }}</span>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <div class="container">
+        <div class="content-container">
+            <div class="section-header fade-in" style="text-align: left; margin-bottom: 2rem;">
+                <h2>The Challenge</h2>
+            </div>
+            <p class="fade-in" style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+                {{ case_study.challenge }}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Key Problems</h2>
+            <p>The specific issues {{ case_study.name }} needed to solve</p>
+        </div>
+        <div class="customer-grid">
+            {% for problem in case_study.problems %}
+            <div class="customer-card problem-card fade-in">
+                <h3>{{ problem.title }}</h3>
+                <p>{{ problem.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <div class="container">
+        <div class="content-container">
+            <div class="section-header fade-in" style="text-align: left; margin-bottom: 2rem;">
+                <h2>The Solution</h2>
+            </div>
+            <p class="fade-in" style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                {{ case_study.solution }}
+            </p>
+        </div>
+        <div class="customer-grid" style="margin-top: 3rem;">
+            {% for capability in case_study.capabilities_used %}
+            <div class="customer-card capability-card fade-in">
+                <h3><span class="capability-dot"></span>{{ capability.title }}</h3>
+                <p style="color: var(--text-secondary);">{{ capability.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>The Results</h2>
+            <p>Measurable impact from working with Amaltheon</p>
+        </div>
+        <div class="customer-grid">
+            {% for result in case_study.results %}
+            <div class="customer-card decision-card fade-in">
+                <div class="decision-number" style="font-size: 1.5rem; width: 60px; height: 60px;">{{ result.metric }}</div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">{{ result.title }}</h4>
+                    <p style="margin: 0;">{{ result.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% if case_study.quote %}
+<section class="section section-dark">
+    <div class="container">
+        <div class="content-container" style="text-align: center;">
+            <blockquote class="fade-in" style="font-size: 1.5rem; font-style: italic; color: var(--text-primary); line-height: 1.6; margin: 0 0 1.5rem 0;">
+                "{{ case_study.quote.text }}"
+            </blockquote>
+            <p class="fade-in" style="color: var(--accent);">
+                <strong>{{ case_study.quote.author }}</strong>
+                <span style="color: var(--text-muted);"> — {{ case_study.quote.role }}</span>
+            </p>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="cta-section">
+    <div class="container">
+        <h2 class="fade-in">Ready to see similar results?</h2>
+        <p class="fade-in">Let's discuss how Amaltheon can help your business.</p>
+        <div class="hero-buttons fade-in">
+            <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
+            <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

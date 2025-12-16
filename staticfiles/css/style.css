@@ -558,11 +558,11 @@ a {
     transform: translateX(4px);
 }
 
-/* Animate on scroll */
+/* Animate on scroll - udpated */
 .fade-in {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: all 0.4s ease-out;
 }
 
 .fade-in.visible {
@@ -1738,5 +1738,45 @@ a {
 
     .contact-form-wrapper {
         padding: 1.5rem;
+    }
+}
+
+/* Add these styles to the END of your existing style.css */
+
+/* Audience Tags for Capability Pages */
+.audience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.audience-tag {
+    display: inline-block;
+    background: var(--accent-subtle);
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    color: var(--accent);
+    padding: 0.625rem 1.25rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.audience-tag:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+}
+
+/* Questions Grid adjustments for capability pages */
+.content-section .questions-grid {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .audience-tags {
+        justify-content: center;
     }
 }

@@ -3,53 +3,75 @@
 {% block title %}{{ capability.name }} | Amaltheon{% endblock %}
 
 {% block content %}
-<header class="page-header">
-    <div class="hero-badge">
+<section class="page-header customer-page-header">
+    <div class="hero-badge fade-in">
         <span class="badge-dot"></span>
         {{ capability.badge }}
     </div>
-    <h1>{{ capability.headline }}</h1>
-    <p class="lead">{{ capability.description }}</p>
-</header>
-
-<section class="content-section">
-    <div class="content-container">
-        <h2>Why Amaltheon</h2>
-        <ul>
-            {% for item in capability.why_us %}
-            <li>{{ item }}</li>
-            {% endfor %}
-        </ul>
+    <h1 class="fade-in">{{ capability.headline }}</h1>
+    <p class="lead fade-in">{{ capability.description }}</p>
+    <div class="hero-buttons fade-in">
+        <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
+        <a href="#questions" class="btn-secondary">See Questions We Answer</a>
     </div>
 </section>
 
-<section class="content-section section-dark">
-    <div class="content-container">
-        <h2>Who It's For</h2>
-        <div class="audience-tags">
-{% for audience in capability.who_its_for %}<span class="audience-tag">{{ audience }}</span>
-{% endfor %}
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Why Amaltheon</h2>
+            <p>What sets our {{ capability.name|lower }} capabilities apart</p>
+        </div>
+        <div class="customer-grid">
+            {% for item in capability.why_us %}
+            <div class="customer-card decision-card fade-in">
+                <div class="decision-number">{{ forloop.counter }}</div>
+                <p>{{ item }}</p>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
 
-<section class="content-section">
-    <div class="content-container">
-        <h2>Questions We Can Answer</h2>
+<section class="section">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Who It's For</h2>
+            <p>Organizations that benefit from {{ capability.name|lower }}</p>
+        </div>
+        <div class="audience-tags fade-in" style="justify-content: center;">
+            {% for audience in capability.who_its_for %}
+            <span class="audience-tag">{{ audience }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="questions" class="section section-dark">
+    <div class="container">
+        <div class="section-header fade-in">
+            <h2>Questions We Can Answer</h2>
+            <p>Real queries. Real-time answers. Exposed through dashboards, alerts, and API.</p>
+        </div>
         <div class="questions-grid">
             {% for question in capability.questions %}
-            <div class="question-card">{{ question }}</div>
+            <div class="question-card fade-in">
+                <span class="question-mark">"</span>
+                {{ question }}
+            </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
 <section class="cta-section">
-    <h2>Ready to Get Started?</h2>
-    <p>Let's talk about how {{ capability.name }} can work for your business.</p>
-    <div class="hero-buttons">
-        <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
-        <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>
+    <div class="container">
+        <h2 class="fade-in">Ready to Get Started?</h2>
+        <p class="fade-in">Let's talk about how {{ capability.name }} can work for your business.</p>
+        <div class="hero-buttons fade-in">
+            <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
+            <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>
+        </div>
     </div>
 </section>
 {% endblock %}

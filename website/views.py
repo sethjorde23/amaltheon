@@ -57,8 +57,13 @@ def demo_success(request):
 def customer_detail(request, customer_data):
     return render(request, 'website/customer_detail.html', {'customer': customer_data})
 
+
 def capability_detail(request, capability_data):
     return render(request, 'website/capability_detail.html', {'capability': capability_data})
+
+def case_study_detail(request, case_study_data):
+    return render(request, 'website/case_study_detail.html', {'case_study': case_study_data})
+
 
 # Customer Data
 GROWERS_DATA = {
@@ -740,6 +745,90 @@ AI_INTEGRATION_DATA = {
     ],
 }
 
+# Add this to views.py
+
+# ============================================
+# Case Study Data & Views
+# ============================================
+
+LOCAVANA_DATA = {
+    'name': 'Locavana',
+    'subtitle': 'How a regional food hub transformed their sourcing operations with real-time market intelligence',
+    'industry': 'Food Hub & Distribution',
+    'location': 'Pacific Northwest',
+    'challenge': '''
+        Locavana is a regional food hub connecting over 150 local farms with restaurants, grocery stores, and institutional buyers across the Pacific Northwest. As they scaled from a small cooperative to a major regional player, their manual processes for tracking supply, coordinating logistics, and matching buyers with sellers began to break down. They were leaving money on the table, losing suppliers to competitors, and struggling to give buyers the reliability they demanded.
+    ''',
+    'problems': [
+        {
+            'title': 'Blind Spot on Supply',
+            'description': 'Account managers spent 15+ hours per week calling farms to check availability. By the time they had a clear picture, the best products were already committed elsewhere.',
+        },
+        {
+            'title': 'Pricing Inconsistency',
+            'description': 'Without market benchmarks, pricing was based on gut feel and negotiation skill. Some suppliers were overpaid, some underpaid, and margins were unpredictable.',
+        },
+        {
+            'title': 'Missed Connections',
+            'description': 'Buyers would request products that were available from hub suppliers, but the team didn\'t have visibility to make the match. Opportunities were slipping through the cracks daily.',
+        },
+        {
+            'title': 'Forecast Failures',
+            'description': 'Seasonal planning was reactive. They\'d realize too late that a key crop was short or that demand had shifted, leading to scrambles and disappointed customers.',
+        },
+    ],
+    'solution': '''
+        Amaltheon worked with Locavana to deploy a comprehensive intelligence layer across their operations. We integrated with their existing systems, onboarded their supplier network, and built custom dashboards that gave their team real-time visibility into supply, demand, and pricing across the regional food system.
+    ''',
+    'capabilities_used': [
+        {
+            'title': 'Real-Time Supply Dashboard',
+            'description': 'A live view of availability across all 150+ suppliers, updated daily through automated check-ins and integrations. Account managers can now see what\'s available in seconds, not hours.',
+        },
+        {
+            'title': 'Pricing Intelligence Engine',
+            'description': 'Market-based pricing recommendations for every product category, benchmarked against regional transactions. Ensures fair prices for farmers and competitive rates for buyers.',
+        },
+        {
+            'title': 'Buyer-Supplier Matching',
+            'description': 'Automated alerts when buyer requests match supplier availability. The system surfaces opportunities that would have been missed before.',
+        },
+        {
+            'title': 'Demand Forecasting',
+            'description': 'Seasonal demand models built on historical patterns and buyer signals, helping Locavana advise suppliers on what to plant and when to harvest.',
+        },
+    ],
+    'results': [
+        {
+            'metric': '40%',
+            'title': 'Reduction in Sourcing Time',
+            'description': 'Account managers reclaimed hours previously spent on phone calls and spreadsheets.',
+        },
+        {
+            'metric': '23%',
+            'title': 'Increase in Supplier Retention',
+            'description': 'Fair, transparent pricing and better communication kept farmers in the network.',
+        },
+        {
+            'metric': '3x',
+            'title': 'More Matched Transactions',
+            'description': 'Automated matching surfaced opportunities the team was previously missing.',
+        },
+        {
+            'metric': '$2.1M',
+            'title': 'Additional Annual Revenue',
+            'description': 'Captured through better matching, pricing optimization, and reduced waste.',
+        },
+    ],
+    'quote': {
+        'text': 'Amaltheon gave us visibility we never had before. We went from reacting to the market to actually understanding it. Our farmers are happier, our buyers are more reliable, and our margins finally make sense.',
+        'author': 'Sarah Chen',
+        'role': 'CEO, Locavana',
+    },
+}
+
+
+
 # Customer View functions
 def growers(request):
     return customer_detail(request, GROWERS_DATA)
@@ -786,3 +875,7 @@ def profitability_analysis(request):
 
 def ai_integration(request):
     return capability_detail(request, AI_INTEGRATION_DATA)
+
+#case studies
+def locavana(request):
+    return case_study_detail(request, LOCAVANA_DATA)

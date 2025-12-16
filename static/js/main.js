@@ -114,12 +114,14 @@ class ParticleNetwork {
 }
 
 // Mobile Menu Handler
+// Replace the initMobileMenu function in main.js with this updated version
+// This handles multiple dropdowns properly
+
 function initMobileMenu() {
     const btn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav-links');
     const body = document.body;
-    const dropdownTrigger = document.querySelector('.dropdown-trigger');
-    const dropdown = document.querySelector('.dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
     if (btn) {
         btn.addEventListener('click', () => {
@@ -129,11 +131,23 @@ function initMobileMenu() {
         });
     }
 
-    // Handle mobile dropdown click
-    if (dropdownTrigger && window.innerWidth <= 768) {
-        dropdownTrigger.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default link behavior if it's a link
-            dropdown.classList.toggle('active');
+    // Handle mobile dropdown clicks for ALL dropdowns
+    if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Close other dropdowns first
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown) {
+                            d.classList.remove('active');
+                        }
+                    });
+                    // Toggle this dropdown
+                    dropdown.classList.toggle('active');
+                });
+            }
         });
     }
 
@@ -144,6 +158,8 @@ function initMobileMenu() {
             btn.classList.remove('active');
             nav.classList.remove('active');
             body.classList.remove('no-scroll');
+            // Also close all dropdowns
+            dropdowns.forEach(d => d.classList.remove('active'));
         });
     });
 }
@@ -173,14 +189,12 @@ class ScrollAnimations {
     }
 
     checkElements() {
-        this.elements.forEach((el, i) => {
+        this.elements.forEach((el) => {
             const rect = el.getBoundingClientRect();
             const windowHeight = window.innerHeight;
 
-            if (rect.top < windowHeight * 0.85) {
-                setTimeout(() => {
-                    el.classList.add('visible');
-                }, i * 100);
+            if (rect.top < windowHeight * 1) {
+                el.classList.add('visible');
             }
         });
     }
