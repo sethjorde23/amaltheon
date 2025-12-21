@@ -1,0 +1,57 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Our Capabilities | Amaltheon{% endblock %}
+
+{% block content %}
+<section class="page-header customer-page-header">
+    <div class="hero-badge fade-in">
+        <span class="badge-dot"></span>
+        Capabilities
+    </div>
+    <h1 class="fade-in">Deploy what you need. <span class="highlight">Scale when you're ready.</span></h1>
+    <p class="lead fade-in">Our capabilities are built as standalone modules that can be deployed individually to solve specific bottlenecks or integrated to build a custom operating system.</p>
+</section>
+
+<div class="container module-grid-container">
+    {% for suite in suites %}
+    <div class="suite-section fade-in">
+        <div class="suite-header">
+            <h3>{{ suite.name }}</h3>
+            <span class="suite-tagline">{{ suite.tagline }}</span>
+        </div>
+
+        <div class="module-row">
+            {% for cap in suite.capabilities %}
+            <div class="module-card" id="{{ cap.id }}">
+                <h4>{{ cap.title }}</h4>
+                <p class="module-description">{{ cap.desc }}</p>
+
+                <div class="capabilities-action-container">
+                    <span class="action-label">Capabilities in Action</span>
+                    <div class="action-pills">
+                        {% for ex in cap.examples %}
+                        <span class="action-pill">{{ ex }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+<section class="section section-dark">
+    <div class="container text-center">
+        <h2 class="fade-in">Ready to automate a single process?</h2>
+        <p class="fade-in" style="margin-bottom: 3rem; color: var(--text-secondary);">
+            Identify your biggest bottleneck and deploy a surgical solution to drive immediate efficiency.
+        </p>
+        <div class="hero-buttons fade-in">
+            <a href="{% url 'contact' %}" class="btn-primary">Deploy a Module</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

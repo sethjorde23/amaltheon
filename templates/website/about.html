@@ -1,68 +1,185 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block title %}About Us | Amaltheon{% endblock %}
-
 {% block content %}
 <section class="page-header customer-page-header">
     <div class="hero-badge fade-in">
         <span class="badge-dot"></span>
-        Our Story
+        About Amaltheon
     </div>
-    <h1 class="fade-in">The Food System Has a <span class="highlight">Data Problem</span></h1>
-    <p class="lead fade-in">We're building the intelligence layer the food ecosystem has been missing.</p>
+    <h1 class="fade-in">The <span class="highlight">Operating System</span> for Food</h1>
 </section>
 
 <section class="section">
     <div class="container">
-        <div class="content-container">
-            <h2 class="fade-in">The Problem We See</h2>
-            <p class="fade-in">The food system is one of the largest economic engines on the planet. Yet across the value chain—from field to fork—critical decisions are made with incomplete information.</p>
-            <p class="fade-in">Growers plan production without demand signals. Processors source ingredients without visibility into supply. CPG brands launch products without understanding regional dynamics. Restaurants build menus without pricing intelligence. Investors evaluate opportunities without reliable market data.</p>
-            <p class="fade-in">Here's the thing: the data to answer all of these questions already exists. It's just scattered across thousands of sources, trapped in incompatible formats, and impossible to access without significant resources.</p>
-            <p class="fade-in" style="color: var(--accent); font-weight: 600;">We collect it. We analyze it. We deliver it to you.</p>
+        <div class="section-header fade-in">
+            <h2>The Problem</h2>
+            <p>Information gaps cascade through the entire food system</p>
+        </div>
+
+        <div class="problem-cascade">
+            <div class="cascade-step fade-in">
+                <div class="cascade-number">1</div>
+                <div class="cascade-content">
+                    <h3>Growers plant blind</h3>
+                    <p>Decisions based on last year's prices and gut instinct. No visibility into what buyers actually need until harvest is over.</p>
+                </div>
+            </div>
+
+            <div class="cascade-arrow fade-in"><span>↓</span></div>
+
+            <div class="cascade-step fade-in">
+                <div class="cascade-number">2</div>
+                <div class="cascade-content">
+                    <h3>Processors guess at capacity</h3>
+                    <p>No real-time signal on upstream supply or downstream demand. Over-commit or under-utilize—every season is a gamble.</p>
+                </div>
+            </div>
+
+            <div class="cascade-arrow fade-in"><span>↓</span></div>
+
+            <div class="cascade-step fade-in">
+                <div class="cascade-number">3</div>
+                <div class="cascade-content">
+                    <h3>Buyers scramble for supply</h3>
+                    <p>Shortages discovered after they've hit. No early warning, no alternative sourcing intelligence. Menus change at the last minute.</p>
+                </div>
+            </div>
+
+            <div class="cascade-arrow fade-in"><span>↓</span></div>
+
+            <div class="cascade-impact fade-in">
+                <div class="cascade-impact-stats">
+                    <div class="cascade-stat">
+                        <div class="number">30%</div>
+                        <div class="label">Food Wasted</div>
+                    </div>
+                    <div class="cascade-stat">
+                        <div class="number">$400B</div>
+                        <div class="label">Lost Annually</div>
+                    </div>
+                </div>
+                <p>Not because of bad intentions—because no one can see the full picture.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="section section-dark">
     <div class="container">
-        <div class="content-container">
-            <h2 class="fade-in">What We Believe</h2>
-            <p class="fade-in">We believe the food system can be radically more efficient—without consolidation, without sacrificing diversity, without concentrating power in fewer hands.</p>
-            <p class="fade-in">But efficiency requires intelligence. You can't optimize what you can't measure. You can't plan what you can't predict. You can't compete when everyone else has a map and you're navigating blind.</p>
-            <p class="fade-in">Data shouldn't be a competitive advantage reserved for the largest players. It should be infrastructure—available to every grower, processor, brand, and buyer operating in food.</p>
+        <div class="section-header fade-in">
+            <h2>Our Solution</h2>
+            <p>We sit at the center of the food system—connecting market intelligence with your operational data to power AI agents that help you decide and act.</p>
+        </div>
+
+        <div class="about-diagram fade-in">
+            <div class="about-supply-chain">
+                <div class="about-chain-node">
+                    <h4>Growers</h4>
+                    <p>Farms & Producers</p>
+                </div>
+                <span class="about-chain-arrow">⟶</span>
+                <div class="about-chain-node">
+                    <h4>Processors</h4>
+                    <p>Value-Add & Packaging</p>
+                </div>
+                <span class="about-chain-arrow">⟶</span>
+                <div class="about-chain-node">
+                    <h4>Distributors</h4>
+                    <p>Logistics & Storage</p>
+                </div>
+                <span class="about-chain-arrow">⟶</span>
+                <div class="about-chain-node">
+                    <h4>Buyers</h4>
+                    <p>Restaurants, Retail, CPG</p>
+                </div>
+            </div>
+
+            <div class="about-connector-zone">
+                <div class="about-vertical-connectors">
+                    <div class="about-connector-line"></div>
+                    <div class="about-connector-line"></div>
+                    <div class="about-connector-line"></div>
+                    <div class="about-connector-line"></div>
+                </div>
+            </div>
+
+            <div class="about-amaltheon-layer">
+                <div class="about-layer-header">
+                    <h3>AMALTHEON</h3>
+                    <p>The Operating System for Food</p>
+                </div>
+
+                <div class="about-layer-content">
+                    <div class="about-stack-layer about-network-layer about-market-data">
+                        <h5>Network Data Layer</h5>
+                        <p>Transaction-level visibility across the food supply chain</p>
+                    </div>
+
+                    <div class="about-plus-sign">+</div>
+
+                    <div class="about-flow-arrow">↓</div>
+
+                    <div class="about-agents-row">
+                        <div class="about-client-data">
+                            <h5>Client Data</h5>
+                        </div>
+
+                        <span class="about-client-arrow">→</span>
+
+                        <div class="about-mobile-arrow">↓</div>
+
+                        <div class="about-ai-agents">
+                            <h4>Intelligence Core</h4>
+                        </div>
+                    </div>
+
+                    <div class="about-output-zone">
+                        <div class="about-output-arrow">↓</div>
+                        <div class="about-output-text">Decision Layer</div>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">AI Agents • Custom Apps • Dashboards • Alerts</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <div class="content-container">
-            <h2 class="fade-in">Our Approach</h2>
-            <p class="fade-in">Amaltheon aggregates data from across the food ecosystem—production capacity, demand signals, pricing trends, logistics patterns, market dynamics, regulatory landscapes—and structures it into intelligence you can actually use.</p>
-            <p class="fade-in">Whether you're deciding what to grow next season, where to source ingredients, how to price products, which markets to enter, or where to deploy capital—we give you the visibility to move with confidence.</p>
-            <p class="fade-in" style="color: var(--accent); font-weight: 600;">The answers exist. We just make them accessible.</p>
+        <div class="section-header fade-in">
+            <h2>Who We Are</h2>
         </div>
-    </div>
-</section>
+        <div class="content-container" style="text-align: center;">
+            <p class="fade-in" style="font-size: 1.25rem; line-height: 1.8;">
+                Amaltheon is a joint venture between food industry operators and software developers.
+            </p>
+            <p class="fade-in" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                Our partners include executives at Cherry Capital Foods and Locavana—people who have spent decades moving food from farms to tables. We're not outside technologists guessing at how this industry works. We're embedded in it.
+            </p>
+        </div>
 
-<section class="section section-dark">
-    <div class="container">
-        <div class="content-container">
-            <h2 class="fade-in">Why Now</h2>
-            <p class="fade-in">Anyone who's implemented an ERP knows the pain: bloated systems built for everyone, customized for no one. For decades, that was the trade-off. Custom software was too expensive, too slow, too risky.</p>
-            <p class="fade-in" style="color: var(--accent); font-weight: 600;">That's no longer true.</p>
-            <p class="fade-in">Advances in AI have fundamentally changed what's possible. We can now build tailored solutions fast—software that fits how you actually operate, not how a vendor thinks you should. Intelligence platforms that adapt to your business instead of forcing your business to adapt to them.</p>
-            <p class="fade-in">The economics of custom finally make sense. And we're using that moment to build what the food system has always needed.</p>
+        <div class="customer-grid" style="margin-top: 3rem;">
+            <div class="customer-card fade-in">
+                <h3 style="color: var(--accent-secondary);">Food System Operators</h3>
+                <p>Executives who have built and scaled regional food businesses. They know where the inefficiencies are because they've lived them.</p>
+            </div>
+            <div class="customer-card fade-in">
+                <h3 style="color: var(--accent-secondary);">Software Developers</h3>
+                <p>Engineers who build AI systems and data infrastructure. We turn domain expertise into working technology.</p>
+            </div>
+            <div class="customer-card fade-in">
+                <h3 style="color: var(--accent-secondary);">Business Problem Solvers</h3>
+                <p>We start with the problem, not the feature list. Every tool we build exists because an operator needed it.</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="cta-section">
     <div class="container">
-        <h2 class="fade-in">Ready to See What's Possible?</h2>
-        <p class="fade-in">Join the growers, processors, brands, and investors building smarter food systems.</p>
+        <h2 class="fade-in">Ready to connect to the network?</h2>
+        <p class="fade-in">See how Amaltheon can work for your operation.</p>
         <div class="hero-buttons fade-in">
             <a href="{% url 'demo' %}" class="btn-primary">Request a Demo</a>
             <a href="{% url 'contact' %}" class="btn-secondary">Get in Touch</a>

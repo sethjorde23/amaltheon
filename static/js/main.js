@@ -315,3 +315,100 @@ document.addEventListener('DOMContentLoaded', () => {
     initCardTilt();
     initMobileMenu(); // Added mobile menu init
 });
+
+// Add this to main.js
+
+// Supply Chain Tabs
+function initSupplyChainTabs() {
+    const tabContainer = document.querySelector('.customer-tab-container');
+    if (!tabContainer) return;
+
+    const tabs = document.querySelectorAll('.chain-node, .supporting-node');
+    const contents = document.querySelectorAll('.customer-tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-tab');
+
+            // Remove active from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+
+            // Add active to clicked tab
+            tab.classList.add('active');
+
+            // Hide all content
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Show target content
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+
+                // Scroll to top of content smoothly
+                tabContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Handle direct links with hash (e.g., /customers/#growers)
+    function handleHash() {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+            const targetTab = document.querySelector(`[data-tab="${hash}"]`);
+            if (targetTab) {
+                targetTab.click();
+            }
+        }
+    }
+
+    // Check hash on load
+    handleHash();
+
+    // Check hash on change
+    window.addEventListener('hashchange', handleHash);
+}
+
+// Add to DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // ... existing inits ...
+    initSupplyChainTabs();
+});
+
+function initCaseStudyScroll() {
+    const items = document.querySelectorAll('.showcase-item');
+    const images = document.querySelectorAll('.feature-image-wrapper');
+
+    const observerOptions = {
+        threshold: 0.6,
+        rootMargin: "0px 0px -20% 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const featureId = entry.target.getAttribute('data-feature');
+
+                // Update text state
+                items.forEach(item => item.classList.remove('active'));
+                entry.target.classList.add('active');
+
+                // Update image state
+                images.forEach(img => {
+                    img.classList.toggle('active', img.id === featureId);
+                });
+            }
+        });
+    }, observerOptions);
+
+    items.forEach(item => observer.observe(item));
+}
+
+// Add to your existing DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    initCaseStudyScroll();
+});
+
+function toggleProblem(id) {
+    const content = document.getElementById(`problem-${id}`);
+    content.classList.toggle('active');
+}

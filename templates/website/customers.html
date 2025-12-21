@@ -1,0 +1,461 @@
+{% extends 'website/base.html' %}
+
+{% block title %}Who We Serve | Amaltheon{% endblock %}
+
+{% block content %}
+<section class="page-header customer-page-header">
+    <div class="hero-badge fade-in">
+        <span class="badge-dot"></span>
+        Who We Serve
+    </div>
+    <h1 class="fade-in">Intelligence for Every Step of the Food System</h1>
+    <p class="lead fade-in">Purpose-built tools for every role in the supply chain — from inputs to plate.</p>
+</section>
+
+<!-- Supply Chain Navigation / Tabs -->
+<nav class="supply-chain-nav">
+    <div class="supply-chain-wrapper">
+        <div class="supply-chain-flow">
+            <button class="chain-node" data-tab="ag-supply">
+                <span class="node-label">Ag Supply</span>
+            </button>
+            <div class="chain-connector"></div>
+            <button class="chain-node active" data-tab="growers">
+                <span class="node-label">Growers</span>
+            </button>
+            <div class="chain-connector"></div>
+            <button class="chain-node" data-tab="processors">
+                <span class="node-label">Processors</span>
+            </button>
+            <div class="chain-connector"></div>
+            <button class="chain-node" data-tab="cpg">
+                <span class="node-label">CPG</span>
+            </button>
+            <div class="chain-connector"></div>
+            <button class="chain-node" data-tab="restaurants">
+                <span class="node-label">Restaurants</span>
+            </button>
+        </div>
+        <div class="supporting-roles">
+            <button class="supporting-node" data-tab="government">
+                <span class="supporting-label">Government</span>
+            </button>
+            <button class="supporting-node" data-tab="investors">
+                <span class="supporting-label">Investors</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Tab Content Container -->
+<div class="customer-tab-container">
+
+    <!-- AG SUPPLY -->
+    <div id="ag-supply" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Ag Supply</div>
+                <h2>Get Ahead of Demand</h2>
+                <p class="customer-section-description">Grower-level forecasting, competitive positioning, and inventory optimization. Stop reacting to the season.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">Where is demand for inputs heading, and how should I position inventory?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">Which growers are scaling and need more supply?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">Where are my competitors winning, and why?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Demand Forecasting</h4>
+                    <ul>
+                        <li>Grower-level demand signals by input category</li>
+                        <li>Seasonal demand modeling based on planting intentions</li>
+                        <li>New customer identification: who is scaling?</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Market Intelligence</h4>
+                    <ul>
+                        <li>Competitive pricing and positioning analysis</li>
+                        <li>Share of wallet: where are growers buying elsewhere?</li>
+                        <li>Emerging practice trends and input implications</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Inventory & Logistics</h4>
+                    <ul>
+                        <li>Demand-driven inventory positioning</li>
+                        <li>Pre-season order forecasting</li>
+                        <li>Stockout risk alerts</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Ag Supply</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- GROWERS -->
+    <div id="growers" class="customer-tab-content active">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Growers</div>
+                <h2>Know What to Plant, When to Sell, Who to Sell To</h2>
+                <p class="customer-section-description">Demand forecasting, price optimization, and buyer matching powered by real market data. Stop planting blind.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">What should I plant this season given my soil, climate, and local demand?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">Am I getting fair prices compared to the market?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">Which buyers should I build relationships with?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Planning & Forecasting</h4>
+                    <ul>
+                        <li>Crop recommendation engine based on location and real-time demand</li>
+                        <li>Seasonal demand forecasting by crop and region</li>
+                        <li>Climate risk modeling: frost dates, precipitation, growing degree days</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Market Intelligence</h4>
+                    <ul>
+                        <li>Real-time pricing across local buyers</li>
+                        <li>Demand alerts when buyers need what you grow</li>
+                        <li>Buyer quality scoring: payment reliability, volume consistency</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Sales & Relationships</h4>
+                    <ul>
+                        <li>Buyer matching based on crop mix and capacity</li>
+                        <li>Contract opportunity alerts</li>
+                        <li>Negotiation support: know the market rate before you quote</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Growing</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOD PROCESSORS -->
+    <div id="processors" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Food Processors</div>
+                <h2>Match Capacity to Real Demand</h2>
+                <p class="customer-section-description">Sourcing intelligence, production scheduling, and downstream visibility to optimize every run. Stop guessing at capacity.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">What capacity should I reserve for which products this quarter?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">Which growers should I contract with, and at what volumes?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">When will supply shortages hit, and how do I get ahead of them?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Capacity Planning</h4>
+                    <ul>
+                        <li>Production scheduling aligned to upstream supply and downstream orders</li>
+                        <li>Seasonal capacity modeling: know bottlenecks before they hit</li>
+                        <li>Scenario planning: what if supply drops 20%?</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Sourcing Intelligence</h4>
+                    <ul>
+                        <li>Real-time visibility into grower availability by crop and quality tier</li>
+                        <li>Supplier discovery: find new growers before competitors</li>
+                        <li>Supplier reliability scoring: delivery consistency, quality variance</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Demand Visibility</h4>
+                    <ul>
+                        <li>Order trend analysis from CPG, restaurant, and retail buyers</li>
+                        <li>Customer concentration risk alerts</li>
+                        <li>New buyer identification: who is scaling and needs a processor?</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Processing</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- CPG PRODUCERS -->
+    <div id="cpg" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">CPG Producers</div>
+                <h2>Secure Supply Before Your Competitors</h2>
+                <p class="customer-section-description">Ingredient monitoring, supplier diversification, and cost structure intelligence. Stop scrambling for supply.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">Where should I source ingredients to balance cost, quality, and reliability?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">How do I reduce supply chain risk without bloating inventory?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">Where are my competitors sourcing, and what's their cost structure?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Supply Chain Intelligence</h4>
+                    <ul>
+                        <li>Ingredient availability tracking across regions and seasons</li>
+                        <li>Price trend monitoring with forward-looking indicators</li>
+                        <li>Disruption alerts: weather, logistics, capacity constraints</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Sourcing & Procurement</h4>
+                    <ul>
+                        <li>Supplier discovery: find local producers who meet your specs</li>
+                        <li>Contract timing intelligence: when to lock in vs. stay spot</li>
+                        <li>Quality and reliability scoring across suppliers</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Competitive Intelligence</h4>
+                    <ul>
+                        <li>Sourcing pattern analysis: where are competitors buying?</li>
+                        <li>Cost structure benchmarking</li>
+                        <li>Regional supply advantage mapping</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About CPG</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- RESTAURANTS -->
+    <div id="restaurants" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Restaurants</div>
+                <h2>Build Menus Around What's Actually Available</h2>
+                <p class="customer-section-description">Seasonal planning, supplier discovery, and procurement optimization. Stop scrambling for ingredients.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">What should be on my menu this season based on what's actually available?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">Which local suppliers are reliable and fairly priced?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">How do I tell a compelling local sourcing story to customers?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Menu Planning</h4>
+                    <ul>
+                        <li>Seasonal availability calendars by ingredient and region</li>
+                        <li>Menu optimization based on price, availability, and margin</li>
+                        <li>Ingredient substitution recommendations when supply is tight</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Supplier Management</h4>
+                    <ul>
+                        <li>Local supplier discovery and qualification</li>
+                        <li>Price benchmarking across vendors</li>
+                        <li>Consolidated ordering across multiple farms</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Marketing & Storytelling</h4>
+                    <ul>
+                        <li>Sourcing documentation for menu transparency</li>
+                        <li>Farm and producer profiles for customer-facing content</li>
+                        <li>Sustainability metrics and reporting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Restaurants</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- GOVERNMENT -->
+    <div id="government" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Government & Institutions</div>
+                <h2>See the Food System Clearly</h2>
+                <p class="customer-section-description">Policy modeling, food access mapping, and infrastructure investment optimization. Make decisions with real data.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">Where are the gaps in local food access, and how do we close them?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">Which subsidies and programs are actually moving the needle?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">Where should we invest infrastructure dollars for maximum impact?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Policy Analysis & Modeling</h4>
+                    <ul>
+                        <li>Impact modeling for subsidy and incentive programs</li>
+                        <li>Trade flow analysis: imports, exports, regional self-sufficiency</li>
+                        <li>Scenario planning for policy changes</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Food System Mapping</h4>
+                    <ul>
+                        <li>Supply and demand visualization by region, crop, and channel</li>
+                        <li>Food desert and access gap identification</li>
+                        <li>Infrastructure gap analysis: cold storage, processing, logistics</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Food Security & Resilience</h4>
+                    <ul>
+                        <li>Supply chain vulnerability assessments</li>
+                        <li>Disruption early warning systems</li>
+                        <li>Emergency response coordination data</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Policy</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- INVESTORS -->
+    <div id="investors" class="customer-tab-content">
+        <section class="customer-section">
+            <div class="customer-section-header">
+                <div class="customer-section-badge">Investors</div>
+                <h2>Trust, But Verify</h2>
+                <p class="customer-section-description">Independent verification of supplier relationships, customer concentration, and market position. De-risk your ag and food deals with real transaction data.</p>
+            </div>
+
+            <div class="decisions-grid">
+                <div class="decision-item">
+                    <div class="decision-number">1</div>
+                    <p class="decision-text">Are this company's supplier relationships real and defensible?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">2</div>
+                    <p class="decision-text">What's the real market size — not the pitch deck TAM?</p>
+                </div>
+                <div class="decision-item">
+                    <div class="decision-number">3</div>
+                    <p class="decision-text">What risks aren't showing up in the data room?</p>
+                </div>
+            </div>
+
+            <div class="capabilities-row">
+                <div class="capability-block">
+                    <h4>Supply Chain Verification</h4>
+                    <ul>
+                        <li>Validate claimed supplier relationships against transaction data</li>
+                        <li>Assess supplier concentration and switching risk</li>
+                        <li>Identify undisclosed supply chain dependencies</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Customer Due Diligence</h4>
+                    <ul>
+                        <li>Cross-reference customer lists with actual market activity</li>
+                        <li>Analyze revenue concentration and retention patterns</li>
+                        <li>Validate growth claims with independent demand signals</li>
+                    </ul>
+                </div>
+                <div class="capability-block">
+                    <h4>Market Validation</h4>
+                    <ul>
+                        <li>Size markets using transaction-level data, not top-down estimates</li>
+                        <li>Benchmark target against regional competitors</li>
+                        <li>Assess pricing power and margin sustainability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section-cta">
+                <a href="{% url 'contact' %}" class="btn-primary">Talk to Us About Due Diligence</a>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<section class="cta-section">
+    <div class="container">
+        <h2 class="fade-in">Ready to see your market clearly?</h2>
+        <p class="fade-in">Join the growing network of food system participants making smarter decisions.</p>
+        <a href="{% url 'contact' %}" class="btn-primary fade-in">Request Demo</a>
+    </div>
+</section>
+{% endblock %}

@@ -26,31 +26,10 @@
 
             <div class="nav-links">
                 <a href="{% url 'about' %}" class="nav-link">About</a>
-                <div class="dropdown">
-                    <button class="dropdown-trigger">Who We Serve</button>
-                    <div class="dropdown-menu">
-                        <a href="{% url 'growers' %}">Growers</a>
-                        <a href="{% url 'food_processors' %}">Food Processors</a>
-                        <a href="{% url 'cpg_producers' %}">CPG Producers</a>
-                        <a href="{% url 'restaurants' %}">Restaurants</a>
-                        <a href="{% url 'government' %}">Government</a>
-                        <a href="{% url 'investors' %}">Investors</a>
-                        <a href="{% url 'ag_supply' %}">Ag Supply</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-trigger">Our Capabilities</button>
-                    <div class="dropdown-menu">
-                        <a href="{% url 'custom_software' %}">Custom Software & Dashboards</a>
-                        <a href="{% url 'ai_integration' %}">AI Integration</a>
-                        <a href="{% url 'pricing_intelligence' %}">Pricing Intelligence</a>
-                        <a href="{% url 'demand_forecasting' %}">Demand Forecasting</a>
-                        <a href="{% url 'connections' %}">Buyer/Supplier Network</a>
-                        <a href="{% url 'crop_planning' %}">Crop Planning</a>
-                        <a href="{% url 'seasonal_planning' %}">Seasonal Planning</a>
-                        <a href="{% url 'profitability_analysis' %}">Profitability Analysis</a>
-                    </div>
-                </div>
+                <a href="{% url 'customers' %}" class="nav-link">Who We Serve</a>
+
+                <a href="{% url 'capabilities' %}" class="nav-link">Our Capabilities</a>
+
                 <div class="dropdown">
                     <button class="dropdown-trigger">Case Studies</button>
                     <div class="dropdown-menu">
@@ -81,24 +60,23 @@
                 </div>
                 <div class="footer-column">
                     <h4>Who We Serve</h4>
-                    <a href="{% url 'growers' %}">Growers</a>
-                    <a href="{% url 'food_processors' %}">Food Processors</a>
-                    <a href="{% url 'cpg_producers' %}">CPG Producers</a>
-                    <a href="{% url 'restaurants' %}">Restaurants</a>
-                    <a href="{% url 'government' %}">Government</a>
-                    <a href="{% url 'investors' %}">Investors</a>
-                    <a href="{% url 'ag_supply' %}">Ag Supply</a>
+                    <a href="{% url 'customers' %}#ag-supply">Ag Supply</a>
+                    <a href="{% url 'customers' %}#growers">Growers</a>
+                    <a href="{% url 'customers' %}#processors">Food Processors</a>
+                    <a href="{% url 'customers' %}#cpg">CPG Producers</a>
+                    <a href="{% url 'customers' %}#restaurants">Restaurants</a>
+                    <a href="{% url 'customers' %}#government">Government</a>
+                    <a href="{% url 'customers' %}#investors">Investors</a>
                 </div>
                 <div class="footer-column">
                     <h4>Our Capabilities</h4>
-                    <a href="{% url 'custom_software' %}">Custom Software & Dashboards</a>
-                    <a href="{% url 'ai_integration' %}">AI Integration</a>
-                    <a href="{% url 'pricing_intelligence' %}">Pricing Intelligence</a>
-                    <a href="{% url 'demand_forecasting' %}">Demand Forecasting</a>
-                    <a href="{% url 'connections' %}">Buyer/Supplier Network</a>
-                    <a href="{% url 'crop_planning' %}">Crop Planning</a>
-                    <a href="{% url 'seasonal_planning' %}">Seasonal Planning</a>
-                    <a href="{% url 'profitability_analysis' %}">Profitability Analysis</a>
+                    <a href="{% url 'capabilities' %}#custom-software">Custom Software & Dashboards</a>
+                    <a href="{% url 'capabilities' %}#ai-agents">AI Agents</a> <a href="{% url 'capabilities' %}#pricing-intel">Pricing Intelligence</a>
+                    <a href="{% url 'capabilities' %}#forecasting">Demand Forecasting</a>
+                    <a href="{% url 'capabilities' %}#network">Buyer/Supplier Network</a>
+                    <a href="{% url 'capabilities' %}#crop-planning">Crop Planning</a>
+                    <a href="{% url 'capabilities' %}#seasonal">Seasonal Planning</a>
+                    <a href="{% url 'capabilities' %}#profitability">Profitability Analysis</a>
                 </div>
                 <div class="footer-column">
                     <h4>Case Studies</h4>
